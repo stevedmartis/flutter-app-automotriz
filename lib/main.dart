@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:trinoapp/screen/action/action_screen.dart';
+import 'package:trinoapp/screen/emergency/emergency_screen.dart';
 import 'package:trinoapp/screen/home_screen.dart';
+import 'package:trinoapp/screen/scanner/scanner_screen.dart';
 import 'package:trinoapp/screen/selection/location-screen.dart';
 
 void main() {
@@ -19,6 +22,9 @@ class TrinoApp extends StatelessWidget {
       home: HomeScreen(title: 'TrinoLink'),
       routes: {
         '/position': (context) => LocationScreen(),
+        '/scanner': (context) => ScannerScreen(),
+        '/action': (context) => ActionScreen(),
+        '/emergency': (context) => EmergencyScreen(),
       },
     );
   }

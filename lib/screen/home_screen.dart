@@ -17,7 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
-        child: StyledAppBar(
+        child: StyledScaffold(
+          image: "assets/images/img-home.svg",
+          title: "Hola Juan Francisco!",
           child: Container(
             width: _size.width,
             alignment: Alignment.center,
@@ -35,8 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 VSpace(15),
                 GestureDetector(
                   onTap: ()  {
-                    print('hello');
-                    Navigator.of(context).pushNamed('/position');
+                    Navigator.of(context).pushNamed('/emergency');
                   },
                   child: Container(
                     alignment: Alignment.center,

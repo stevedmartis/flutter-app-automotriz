@@ -42,7 +42,7 @@ class MenuSelector extends StatelessWidget {
             title: "Scanner",
             svgIcon: "scanner.svg",
             onpress: () => {
-              print('hello')
+              Navigator.of(context).pushNamed('/scanner')
             },
           ),
           Divider(
@@ -56,7 +56,7 @@ class MenuSelector extends StatelessWidget {
             title: "Acciones",
             svgIcon: "actions.svg",
             onpress: () => {
-              print('hello')
+              Navigator.of(context).pushNamed('/action')
             },
           ),
         ],

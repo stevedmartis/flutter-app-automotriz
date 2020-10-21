@@ -2,21 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 
-class LocationScreen extends StatefulWidget {
+class ActionScreen extends StatefulWidget {
   @override
-  _LocationScreenState createState() => _LocationScreenState();
+  _ActionScreenState createState() => _ActionScreenState();
 }
 
-class _LocationScreenState extends State<LocationScreen> {
+class _ActionScreenState extends State<ActionScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
 
-    return Scaffold(
-        body: StyledScaffold(
-      image: "assets/images/img-location.svg",
+    return StyledScaffold(
+      image: "assets/images/img-actions.svg",
       title: "SLXH-07",
-      subTitle: "Ubicaciones",
+      subTitle: "Acciones",
       backbutton: true,
       child: Container(
         width: _size.width,
@@ -30,6 +29,6 @@ class _LocationScreenState extends State<LocationScreen> {
           ],
         ),
       ),
-    ));
+    );
   }
 }
