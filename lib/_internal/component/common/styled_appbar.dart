@@ -11,18 +11,7 @@ class StyledAppBar extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
     return Container(
         width: _size.width,
-        height: _size.height,
-        decoration: new BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xffd4bafc),
-              Color(0xffffffff),
-            ],
-            stops: [0, 1],
-            begin: Alignment(-0.00, -1.00),
-            end: Alignment(0.00, 1.00),
-          ),
-        ),
+
         child: Stack(
           children: [
             Positioned(
@@ -67,9 +56,24 @@ class StyledAppBar extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 290,
+              top: 260,
               left: 0,
-              child: child,
+              child: Container(
+                padding: EdgeInsets.only(top: 10),
+                height: _size.height,
+                decoration: new BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xffd4bafc),
+                      Color(0xffffffff),
+                    ],
+                    stops: [0, 1],
+                    begin: Alignment(-0.00, -1.00),
+                    end: Alignment(0.00, 1.00),
+                  ),
+                ),
+                child: child,
+              ),
             )
           ],
         )

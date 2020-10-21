@@ -16,7 +16,8 @@ class StyledCircularButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+        },
         child: ClipOval(
           child: Container(
             color: Color(0xffe7ecfb),

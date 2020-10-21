@@ -33,19 +33,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: _size.width * 0.75,
                 ),
                 VSpace(15),
-                Container(
-                  alignment: Alignment.center,
-                  width: 292,
-                  height: 50,
-                  decoration: new BoxDecoration(color: Color(0xffff0707), borderRadius: BorderRadius.circular(8)),
-                  child: Text(
-                    "Llamada Emergencia",
-                    style: TextStyle(
-                      fontFamily: 'GTWalsheimPro',
-                      color: Color(0xffffffff),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.normal,
+                GestureDetector(
+                  onTap: ()  {
+                    print('hello');
+                    Navigator.of(context).pushNamed('/position');
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 292,
+                    height: 50,
+                    decoration: new BoxDecoration(color: Color(0xffff0707), borderRadius: BorderRadius.circular(8)),
+                    child: Text(
+                      "Llamada Emergencia",
+                      style: TextStyle(
+                        fontFamily: 'GTWalsheimPro',
+                        color: Color(0xffffffff),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.normal,
+                      ),
                     ),
                   ),
                 )

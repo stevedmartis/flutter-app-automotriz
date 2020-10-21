@@ -27,6 +27,9 @@ class MenuSelector extends StatelessWidget {
           OptionSelector(
             svgIcon: "location.svg",
             title: "Ubicaciones",
+            onpress: () => {
+              Navigator.of(context).pushNamed('/position')
+            },
           ),
           Divider(
             color: Color(0xffe7ecfb),
@@ -38,6 +41,9 @@ class MenuSelector extends StatelessWidget {
           OptionSelector(
             title: "Scanner",
             svgIcon: "scanner.svg",
+            onpress: () => {
+              print('hello')
+            },
           ),
           Divider(
             color: Color(0xffe7ecfb),
@@ -49,6 +55,9 @@ class MenuSelector extends StatelessWidget {
           OptionSelector(
             title: "Acciones",
             svgIcon: "actions.svg",
+            onpress: () => {
+              print('hello')
+            },
           ),
         ],
       ),

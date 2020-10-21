@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trinoapp/screen/home_screen.dart';
+import 'package:trinoapp/screen/selection/location-screen.dart';
 
 void main() {
   runApp(TrinoApp());
@@ -16,6 +17,9 @@ class TrinoApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(title: 'TrinoLink'),
+      routes: {
+        '/position': (context) => LocationScreen(),
+      },
     );
   }
 }
