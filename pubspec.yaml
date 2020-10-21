@@ -23,6 +23,7 @@ dependencies:
   clipboard: ^0.1.2+8
   fluttertoast: ^7.0.4
   flutter_staggered_animations: "^0.1.2"
+  device_info: ^0.4.2+9
 
 dev_dependencies:
   flutter_test:

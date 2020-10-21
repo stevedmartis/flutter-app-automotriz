@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/screen/action/action_screen.dart';
 import 'package:trinoapp/screen/emergency/emergency_screen.dart';
 import 'package:trinoapp/screen/home_screen.dart';
+import 'package:trinoapp/screen/scanner/alertdetail_screen.dart';
+import 'package:trinoapp/screen/scanner/levels_screen.dart';
+import 'package:trinoapp/screen/scanner/maintancehistory_screen.dart';
+import 'package:trinoapp/screen/scanner/maintenanceschedule_screen.dart';
+import 'package:trinoapp/screen/scanner/notification_screeen.dart';
 import 'package:trinoapp/screen/scanner/scanner_screen.dart';
 import 'package:trinoapp/screen/selection/location-screen.dart';
 
@@ -25,6 +30,11 @@ class TrinoApp extends StatelessWidget {
         '/scanner': (context) => ScannerScreen(),
         '/action': (context) => ActionScreen(),
         '/emergency': (context) => EmergencyScreen(),
+        '/scanner/levels': (context) => LevelScreen(),
+        '/scanner/notification': (context) => NotificationScreen(),
+        '/scanner/maintenanceHistory': (context) => HistoryMaintanenceScreen(),
+        '/scanner/maintenanceSchedule': (context) => MaintenanceScheduleScreen(),
+        '/scanner/detailAlert': (context) => AlertDetailScreen(),
       },
     );
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
+import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
 
-class ScannerScreen extends StatefulWidget {
+class NotificationScreen extends StatefulWidget {
   @override
-  _ScannerScreenState createState() => _ScannerScreenState();
+  _NotificationScreenState createState() => _NotificationScreenState();
 }
 
-class _ScannerScreenState extends State<ScannerScreen> {
+class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -18,7 +18,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
         child: StyledScaffold(
           image: "assets/images/img-scanner.svg",
           title: "SLXH-07",
-          subTitle: "Scanner",
+          subTitle: "Alertas",
           backbutton: true,
           child: Container(
             width: _size.width,
@@ -29,43 +29,35 @@ class _ScannerScreenState extends State<ScannerScreen> {
                   width: _size.width * 0.80,
                   options: [
                     OptionSelector(
-                      svgIcon: "update-values.svg",
-                      title: "Actualizar Valores",
+                      svgIcon: "notification-msg.svg",
+                      title: "Titulo Mensaje",
                       onpress: () => {
-                        print("Actualizar valores"),
+                        Navigator.of(context).pushNamed('/scanner/detailAlert')
                       },
                     ),
                     OptionSelector(
-                      svgIcon: "levels.svg",
-                      title: "Niveles",
+                      svgIcon: "notification-msg.svg",
+                      title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/levels'),
+                        Navigator.of(context).pushNamed('/scanner/detailAlert')
                       },
                     ),
                     OptionSelector(
-                      svgIcon: "notifications.svg",
-                      title: "Alertas",
+                      svgIcon: "notification-msg-alert.svg",
+                      title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/notification'),
+                        Navigator.of(context).pushNamed('/scanner/detailAlert')
                       },
                     ),
                     OptionSelector(
-                      svgIcon: "maintainance-history.svg",
-                      title: "Historial Mantencion",
+                      svgIcon: "notification-msg-alert.svg",
+                      title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/maintenanceHistory'),
+                        Navigator.of(context).pushNamed('/scanner/detailAlert')
                       },
                     ),
-                    OptionSelector(
-                      svgIcon: "contact-shop.svg",
-                      title: "Agendar Mantencion",
-                      onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/maintenanceSchedule'),
-                      },
-                    ),
-
                   ],
-                ),
+                )
               ],
             ),
           ),

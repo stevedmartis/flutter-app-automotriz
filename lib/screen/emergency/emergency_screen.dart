@@ -10,19 +10,21 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
-    return Container(
-      height: _size.height,
-      width: _size.width,
-      color: Colors.red,
-      child: Column(
-        children: [
-          StyledRedButton(
-            label: "Cancelar",
-            press: () => {
-              Navigator.pop(context)
-            },
-          )
-        ],
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          height: _size.height,
+          width: _size.width,
+          color: Colors.red,
+          child: Column(
+            children: [
+              StyledRedButton(
+                label: "Cancelar",
+                press: () => {Navigator.pop(context)},
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

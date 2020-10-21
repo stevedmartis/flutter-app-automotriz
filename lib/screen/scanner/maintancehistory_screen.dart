@@ -3,12 +3,12 @@ import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
 
-class ActionScreen extends StatefulWidget {
+class HistoryMaintanenceScreen extends StatefulWidget {
   @override
-  _ActionScreenState createState() => _ActionScreenState();
+  _HistoryMaintanenceScreenState createState() => _HistoryMaintanenceScreenState();
 }
 
-class _ActionScreenState extends State<ActionScreen> {
+class _HistoryMaintanenceScreenState extends State<HistoryMaintanenceScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -16,9 +16,9 @@ class _ActionScreenState extends State<ActionScreen> {
     return Scaffold(
       body: SafeArea(
         child: StyledScaffold(
-          image: "assets/images/img-actions.svg",
+          image: "assets/images/img-scanner.svg",
           title: "SLXH-07",
-          subTitle: "ACCIONES",
+          subTitle: "Historial Mantencion",
           backbutton: true,
           child: Container(
             width: _size.width,
@@ -29,28 +29,42 @@ class _ActionScreenState extends State<ActionScreen> {
                   width: _size.width * 0.80,
                   options: [
                     OptionSelector(
-                      svgIcon: "security-system.svg",
-                      title: "Sistema Seguridad",
+                      svgIcon: "maintainance-history.svg",
+                      title: "Mantencion 1",
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
                     OptionSelector(
-                      svgIcon: "verify-system.svg",
-                      title: "Verificacion Sistema",
+                      svgIcon: "maintainance-history.svg",
+                      title: "Mantencion 1",
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
                     OptionSelector(
-                      svgIcon: "system-status.svg",
-                      title: "Estado Sistema",
+                      svgIcon: "maintainance-history.svg",
+                      title: "Mantencion 1",
+                      onpress: () => {
+                        print("Actualizar valores"),
+                      },
+                    ),
+                    OptionSelector(
+                      svgIcon: "maintainance-history.svg",
+                      title: "Mantencion 1",
+                      onpress: () => {
+                        print("Actualizar valores"),
+                      },
+                    ),
+                    OptionSelector(
+                      svgIcon: "maintainance-history.svg",
+                      title: "Mantencion 1",
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),

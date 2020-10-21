@@ -20,7 +20,7 @@ TextStyle kMainStyle = TextStyle(
 TextStyle kMenuStyle = TextStyle(
   fontFamily: 'GTWalsheimPro',
   color: Color(0xff418cfa),
-  fontSize: 18,
+  fontSize: 16,
   fontWeight: FontWeight.w500,
   fontStyle: FontStyle.normal,
 );

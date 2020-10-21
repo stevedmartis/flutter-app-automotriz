@@ -12,29 +12,31 @@ class OptionSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => {
-        onpress()
-      },
-      child: Container(
-        alignment: Alignment.center,
-        padding: EdgeInsets.only(
-          left: 20,
-          top: 10,
-          right: 10,
-          bottom: 10,
-        ),
+    Size _size = MediaQuery.of(context).size;
+    return Container(
+      alignment: Alignment.center,
+      padding: EdgeInsets.only(
+        left: 20,
+        top: 10,
+        right: 10,
+        bottom: 10,
+      ),
+      child: GestureDetector(
+        onTap: () => {
+          onpress()
+        },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             WebsafeSvg.asset(
               "assets/icons/" + svgIcon,
-              width: 48,
-              height: 48,
+              width: 44,
+              height: 44,
             ),
+            HSpace(4),
             Container(
-              width: 100,
+              width: _size.width * 0.40,
               alignment: Alignment.centerLeft,
               child: Text(title, style: kMenuStyle),
             ),

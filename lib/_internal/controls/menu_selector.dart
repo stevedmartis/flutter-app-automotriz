@@ -3,15 +3,38 @@ import 'package:trinoapp/_internal/controls/option_selector.dart';
 
 class MenuSelector extends StatelessWidget {
   final double width;
+  final List<Widget> options;
 
-  const MenuSelector({Key key, this.width}) : super(key: key);
+  const MenuSelector({Key key, this.width, this.options}) : super(key: key);
+
+  List<Widget> prepareOptions() {
+    List<Widget> _opts = new List<Widget>();
+    int total = options.length;
+    int idx = 0;
+    for (Widget opt in options) {
+      _opts.add(opt);
+      idx++;
+      if (idx < total ) {
+        _opts.add(
+          Divider(
+            color: Color(0xffe7ecfb),
+            height: 2,
+            thickness: 2,
+            indent: 10,
+            endIndent: 10,
+          ),
+        );
+      }
+
+    }
+    return _opts;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       width: width,
-      height: 250,
       padding: EdgeInsets.all(5.0),
       decoration: new BoxDecoration(
         color: Color(0xffffffff),
@@ -23,43 +46,7 @@ class MenuSelector extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          OptionSelector(
-            svgIcon: "location.svg",
-            title: "Ubicaciones",
-            onpress: () => {
-              Navigator.of(context).pushNamed('/position')
-            },
-          ),
-          Divider(
-            color: Color(0xffe7ecfb),
-            height: 2,
-            thickness: 2,
-            indent: 10,
-            endIndent: 10,
-          ),
-          OptionSelector(
-            title: "Scanner",
-            svgIcon: "scanner.svg",
-            onpress: () => {
-              Navigator.of(context).pushNamed('/scanner')
-            },
-          ),
-          Divider(
-            color: Color(0xffe7ecfb),
-            height: 2,
-            thickness: 2,
-            indent: 10,
-            endIndent: 10,
-          ),
-          OptionSelector(
-            title: "Acciones",
-            svgIcon: "actions.svg",
-            onpress: () => {
-              Navigator.of(context).pushNamed('/action')
-            },
-          ),
-        ],
+        children: prepareOptions(),
       ),
     );
   }
