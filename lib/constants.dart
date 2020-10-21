@@ -8,3 +8,19 @@ TextStyle kButtonTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontStyle: FontStyle.normal,
 );
+
+TextStyle kMainStyle = TextStyle(
+  fontFamily: 'GTWalsheimPro',
+  color: Color(0xff418cfa),
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+);
+
+TextStyle kMenuStyle = TextStyle(
+  fontFamily: 'GTWalsheimPro',
+  color: Color(0xff418cfa),
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+);
