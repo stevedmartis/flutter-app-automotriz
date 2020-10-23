@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color kButtonBackgroundColor = Color(0xff418cfa);
+const Color kButtonBackgroundColor = Color(0xff418cfa);
 TextStyle kButtonTextStyle = TextStyle(
   fontFamily: 'HelveticaNeue',
   color: Color(0xffffffff),
