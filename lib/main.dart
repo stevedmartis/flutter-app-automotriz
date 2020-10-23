@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/screen/action/action_screen.dart';
 import 'package:trinoapp/screen/emergency/emergency_screen.dart';
 import 'package:trinoapp/screen/home_screen.dart';
+import 'package:trinoapp/screen/login/login_screen.dart';
 import 'package:trinoapp/screen/scanner/alertdetail_screen.dart';
 import 'package:trinoapp/screen/scanner/levels_screen.dart';
 import 'package:trinoapp/screen/scanner/maintancehistory_screen.dart';
@@ -24,8 +25,10 @@ class TrinoApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: '/login',
       home: HomeScreen(title: 'TrinoLink'),
       routes: {
+        '/login': (context) => LoginScreen(),
         '/position': (context) => LocationScreen(),
         '/scanner': (context) => ScannerScreen(),
         '/action': (context) => ActionScreen(),
@@ -35,6 +38,7 @@ class TrinoApp extends StatelessWidget {
         '/scanner/maintenanceHistory': (context) => HistoryMaintanenceScreen(),
         '/scanner/maintenanceSchedule': (context) => MaintenanceScheduleScreen(),
         '/scanner/detailAlert': (context) => AlertDetailScreen(),
+        '/home': (context) => HomeScreen(title: 'TrinoLink'),
       },
     );
   }

@@ -111,13 +111,21 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
                 backgroundColor: Colors.white,
                 press: () => {Navigator.pop(context)},
               ),
+              _start != 0 ?
               StyledRedButton(
                 width: _size.width * 0.75,
                 label: "Cancelar Acción",
                 backgroundColor: Color(0xffff0715),
                 borderWidth: 2,
                 press: () => {Navigator.pop(context)},
-              ),
+              ) : Container(),
+              _start == 0 ?  StyledRedButton(
+                width: _size.width * 0.75,
+                label: "Volver",
+                backgroundColor: Color(0xffff0715),
+                borderWidth: 2,
+                press: () => {Navigator.pop(context)},
+              ) : Container(),
               RichText(
                 textAlign: TextAlign.center,
                 text: new TextSpan(
