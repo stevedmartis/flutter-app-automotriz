@@ -10,13 +10,28 @@ import 'package:trinoapp/screen/scanner/maintenanceschedule_screen.dart';
 import 'package:trinoapp/screen/scanner/notification_screeen.dart';
 import 'package:trinoapp/screen/scanner/scanner_screen.dart';
 import 'package:trinoapp/screen/selection/location-screen.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'dart:io';
 
 void main() {
   runApp(TrinoApp());
 }
 
-class TrinoApp extends StatelessWidget {
+class TrinoApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _TrinoAppState createState() => _TrinoAppState();
+}
+
+class _TrinoAppState extends State<TrinoApp> {
+  final FirebaseMessaging _fcm = FirebaseMessaging();
+
+  @override
+  void initState() {
+    super.initState();
+    initAditionalConfig();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,4 +57,32 @@ class TrinoApp extends StatelessWidget {
       },
     );
   }
+
+  Future<void> initAditionalConfig() async {
+    if (!mounted) return;
+
+    if (Platform.isIOS) {
+      // TODO for ios, make permissions.
+    }
+
+    _fcm.configure(
+      onBackgroundMessage: _onBackgroundMessage,
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: $message");
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: $message");
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: $message");
+      },
+    );
+  }
+
+
+}
+
+Future<dynamic> _onBackgroundMessage(Map<String, dynamic> message) async {
+  debugPrint('On background message $message');
+  return Future<void>.value();
 }

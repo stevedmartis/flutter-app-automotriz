@@ -104,7 +104,7 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
                 ),
               ),
               VSpace(5),
-              StyledRedButton(
+              StyledButton(
                 width: _size.width * 0.75,
                 label: "También Bloquear Vehículo",
                 fontColor: Color(0xffff0715),
@@ -112,14 +112,14 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
                 press: () => {Navigator.pop(context)},
               ),
               _start != 0 ?
-              StyledRedButton(
+              StyledButton(
                 width: _size.width * 0.75,
                 label: "Cancelar Acción",
                 backgroundColor: Color(0xffff0715),
                 borderWidth: 2,
                 press: () => {Navigator.pop(context)},
               ) : Container(),
-              _start == 0 ?  StyledRedButton(
+              _start == 0 ?  StyledButton(
                 width: _size.width * 0.75,
                 label: "Volver",
                 backgroundColor: Color(0xffff0715),

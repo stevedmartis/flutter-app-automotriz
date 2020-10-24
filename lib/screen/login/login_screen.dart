@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/component/common/styled_button.dart';
-import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
-import 'package:trinoapp/_internal/component/common/styled_textbox.dart';
+import 'package:trinoapp/_internal/component/component.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -53,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               StyledButton(
                 label: "Enter",
+                borderColor: Colors.transparent,
                 press: () => {
                   Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false)
                 },

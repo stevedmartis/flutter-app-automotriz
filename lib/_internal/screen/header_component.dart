@@ -1,10 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/common/styled_circularbutton.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:websafe_svg/websafe_svg.dart';
-import 'package:device_info/device_info.dart';
 
 class HeaderComponent extends StatefulWidget {
   final String icon;

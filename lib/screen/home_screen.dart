@@ -1,9 +1,9 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/car_selector.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
-
 
 //TODO https://pub.dev/packages/circular_menu
 class HomeScreen extends StatefulWidget {
@@ -15,6 +15,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
+
+  @override
+  void initState(){
+    super.initState();
+    // _firebaseMessaging.configure(
+    //   onMessage: (message) async {
+    //     print("-------> $message");
+    //   },
+    //   onResume: (message) async {
+    //     print("-------> $message");
+    //   },
+    //   onLaunch: (message) async {},
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -55,30 +72,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 VSpace(15),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamed('/emergency');
+                StyledButton(
+                  label: 'Llamada Emergencia',
+                  width: _size.width * 0.75,
+                  backgroundColor: Color(0xffff0707),
+                  press: () => {
+                    Navigator.of(context).pushNamed('/emergency'),
                   },
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 292,
-                    height: 50,
-                    decoration: new BoxDecoration(
-                      color: Color(0xffff0707),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      "Llamada Emergencia",
-                      style: TextStyle(
-                        fontFamily: 'GTWalsheimPro',
-                        color: Color(0xffffffff),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                      ),
-                    ),
-                  ),
-                )
+                ),
               ],
             ),
           ),

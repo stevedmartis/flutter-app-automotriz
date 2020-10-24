@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
+import 'package:trinoapp/_internal/component/component.dart';
 
 class AlertDetailScreen extends StatefulWidget {
   @override

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "135961584941",
+    "firebase_url": "https://trinoapp-demo.firebaseio.com",
+    "project_id": "trinoapp-demo",
+    "storage_bucket": "trinoapp-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135961584941:android:8c34fbb82eb7e042fe9fa4",
+        "android_client_info": {
+          "package_name": "com.trinolink.trinoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135961584941-5rlqrc9id3prjb1o4jee5mbbp99iuigh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpO8k05ItL0Z2emzqofT5JmM7LK_aLgNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135961584941-5rlqrc9id3prjb1o4jee5mbbp99iuigh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
