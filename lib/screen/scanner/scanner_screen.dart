@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/common/styled_scaffold.dart';
+import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
 
@@ -25,6 +26,10 @@ class _ScannerScreenState extends State<ScannerScreen> {
             alignment: Alignment.center,
             child: Column(
               children: [
+                StyledOdometer(
+                  distance: 2501,
+                ),
+                VSpace(15),
                 MenuSelector(
                   width: _size.width * 0.80,
                   options: [

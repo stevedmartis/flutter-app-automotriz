@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/controls/option_selector.dart';
 
 class MenuSelector extends StatelessWidget {
   final double width;

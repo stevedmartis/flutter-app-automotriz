@@ -7,8 +7,15 @@ class OptionSelector extends StatelessWidget {
   final String svgIcon;
   final String title;
   final Function onpress;
+  final Color statusColor;
 
-  const OptionSelector({Key key, this.svgIcon, this.title, this.onpress}) : super(key: key);
+  const OptionSelector({
+    Key key,
+    this.svgIcon,
+    this.title,
+    this.onpress,
+    this.statusColor = Colors.transparent,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,25 +23,35 @@ class OptionSelector extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       padding: EdgeInsets.only(
-        left: 20,
+        left: 15,
         top: 10,
         right: 10,
         bottom: 10,
       ),
       child: GestureDetector(
         onTap: () => {
-          onpress()
+          onpress(),
         },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            WebsafeSvg.asset(
-              "assets/icons/" + svgIcon,
-              width: 44,
-              height: 44,
+            Container(
+              height: 35,
+              width: 38,
+              alignment: Alignment.center,
+              child: WebsafeSvg.asset(
+                "assets/icons/" + svgIcon,
+              ),
             ),
-            HSpace(4),
+            Container(
+              height: 10,
+              width: 10,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: statusColor,
+              ),
+            ),
             Container(
               width: _size.width * 0.40,
               alignment: Alignment.centerLeft,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
+import 'package:trinoapp/constants.dart';
 
 class LevelScreen extends StatefulWidget {
   @override
@@ -22,15 +23,22 @@ class _LevelScreenState extends State<LevelScreen> {
           backbutton: true,
           child: Container(
             width: _size.width,
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                StyledOdometer(
+                  distance: 2501,
+                ),
+                VSpace(15),
                 MenuSelector(
                   width: _size.width * 0.80,
                   options: [
                     OptionSelector(
                       svgIcon: "fuel-level.svg",
                       title: "Combustible",
+                      statusColor: statusOkColor,
                       onpress: () => {
                         print("Actualizar valores"),
                       },
@@ -38,6 +46,7 @@ class _LevelScreenState extends State<LevelScreen> {
                     OptionSelector(
                       svgIcon: "oil-level.svg",
                       title: "Aceite",
+                      statusColor: statusOkColor,
                       onpress: () => {
                         print("Actualizar valores"),
                       },
@@ -45,6 +54,7 @@ class _LevelScreenState extends State<LevelScreen> {
                     OptionSelector(
                       svgIcon: "cooler-level.svg",
                       title: "Refrigerante",
+                      statusColor: statusProblemColor,
                       onpress: () => {
                         print("Actualizar valores"),
                       },
@@ -52,6 +62,7 @@ class _LevelScreenState extends State<LevelScreen> {
                     OptionSelector(
                       svgIcon: "tyre-presure.svg",
                       title: "Presion Neumaticos",
+                      statusColor: statusWarningColor,
                       onpress: () => {
                         print("Actualizar valores"),
                       },
@@ -59,6 +70,7 @@ class _LevelScreenState extends State<LevelScreen> {
                     OptionSelector(
                       svgIcon: "battery-status.svg",
                       title: "Estado Bateria",
+                      statusColor: statusWarningColor,
                       onpress: () => {
                         print("Actualizar valores"),
                       },

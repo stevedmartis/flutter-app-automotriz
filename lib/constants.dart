@@ -24,3 +24,7 @@ TextStyle kMenuStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontStyle: FontStyle.normal,
 );
+
+const Color statusOkColor = Color(0xffa3e286);
+const Color statusProblemColor = Color(0xffff5252);
+const Color statusWarningColor = Color(0xffffaa08);
