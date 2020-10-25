@@ -2,19 +2,30 @@ import 'package:flutter/material.dart';
 
 class StyledTextBox extends StatelessWidget {
   final String hintText;
+  final double width;
+  final double height;
+  final Widget prefixIcon;
+  final bool obstureText;
 
   const StyledTextBox({
     Key key,
     this.hintText = '',
+    this.width = 270,
+    this.height = 50,
+    this.prefixIcon,
+    this.obstureText = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    TextStyle tStyle = TextStyle(
+      color: Color(0xff418cfa),
+      fontWeight: FontWeight.normal,
+    );
     return Container(
-      padding: EdgeInsets.only(left: 10),
       alignment: Alignment.centerLeft,
-      width: 270,
-      height: 50,
+      width: width,
+      height: height,
       decoration: new BoxDecoration(
         color: Color(0xffffffff),
         borderRadius: BorderRadius.circular(8),
@@ -29,19 +40,16 @@ class StyledTextBox extends StatelessWidget {
       ),
       child: TextFormField(
         textAlign: TextAlign.left,
+        style: tStyle,
+        obscureText: obstureText,
         decoration: InputDecoration(
-            border: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            hintText: hintText,
-            prefixIcon: Icon(
-              Icons.account_circle_outlined,
-              color: Color(0xff418cfa),
-              size: 30,
-            ),
-            prefixStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-            ),
-            hintStyle: TextStyle(color: Color(0xff418cfa))),
+          border: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          hintText: hintText,
+          prefixIcon: prefixIcon,
+          prefixStyle: tStyle,
+          hintStyle: tStyle,
+        ),
       ),
     );
   }

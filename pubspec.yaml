@@ -25,6 +25,9 @@ dependencies:
   flutter_staggered_animations: "^0.1.2"
   device_info: ^0.4.2+9
   firebase_messaging: ^7.0.3
+  font_awesome_flutter: ^8.10.0
+  material_design_icons_flutter: 4.0.5755
+
 
 dev_dependencies:
   flutter_test:
