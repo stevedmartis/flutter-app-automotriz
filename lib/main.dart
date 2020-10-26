@@ -62,7 +62,14 @@ class _TrinoAppState extends State<TrinoApp> {
     if (!mounted) return;
 
     if (Platform.isIOS) {
-      // TODO for ios, make permissions.
+      print('estoy en ios');
+      _fcm.requestNotificationPermissions(
+          const IosNotificationSettings(
+              sound: true, badge: true, alert: true, provisional: true));
+      _fcm.onIosSettingsRegistered
+          .listen((IosNotificationSettings settings) {
+        print("Settings registered: $settings");
+      });
     }
 
     _fcm.configure(
