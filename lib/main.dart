@@ -13,6 +13,8 @@ import 'package:trinoapp/screen/selection/location-screen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:io';
 
+import 'screen/welcome/welcome_screen.dart';
+
 void main() {
   runApp(TrinoApp());
 }
@@ -40,9 +42,10 @@ class _TrinoAppState extends State<TrinoApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/login',
+      initialRoute: '/welcome',
       home: HomeScreen(title: 'TrinoLink'),
       routes: {
+        '/welcome': (context) => WelcomeScreen(),
         '/login': (context) => LoginScreen(),
         '/position': (context) => LocationScreen(),
         '/scanner': (context) => ScannerScreen(),
