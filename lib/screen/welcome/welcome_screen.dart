@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/component/common/slideshow.dart';
-import 'package:trinoapp/_internal/component/common/spacing.dart';
-import 'package:websafe_svg/websafe_svg.dart';
+import 'package:trinoapp/_internal/component/component.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -12,6 +10,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
+
+    final int _numPages = 3;
+    final PageController _pageController = PageController(initialPage: 0);
+    int _currentPage = 0;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -36,85 +38,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 50),
-                  child: Text('HELLO!',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold)),
-                ),
-                VSpace(20),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 50),
-                  child: 
-
-                  
-                  Text('Know everything you need to know about your car',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500)),
-                ),
-                Expanded(
-                  child: SlideShowSvgs(),
-                ),
-                Text(
-                  'Skip intro',
-                  style: TextStyle(
-                    fontSize: 20,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-                VSpace(30),
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: new TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Trino",
-                        style: TextStyle(
-                          fontFamily: 'GTWalsheimPro',
-                          color: Color(0xff4b3232),
-                          fontSize: 27,
-                          fontWeight: FontWeight.w500,
-                          fontStyle: FontStyle.normal,
-                        ),
+                  height: 600,
+                  alignment: Alignment.topCenter,
+                  child: PageView(
+                    physics: ClampingScrollPhysics(),
+                    onPageChanged: (int page) {
+                      setState(() {
+                        _currentPage = page;
+                      });
+                    },
+                    children: <Widget>[
+                      OnboardingMessages(
+                        title: "Test1",
+                        message: "Know everything you need to know about your car",
+                        image: "assets/images/img-intro-1.svg",
                       ),
-                      TextSpan(
-                        text: "Link",
-                        style: TextStyle(
-                          fontFamily: 'GTWalsheimPro',
-                          color: Color(0xff418cfa),
-                          fontSize: 27,
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.normal,
-                        ),
+                      OnboardingMessages(
+                        title: "Test2",
+                        message: "Know everything you need to know about your car",
+                        image: "assets/images/img-intro-2.svg",
+                      ),
+                      OnboardingMessages(
+                        title: "Test3",
+                        message: "Know everything you need to know about your car",
+                        image: "assets/images/img-intro-3.svg",
                       ),
                     ],
                   ),
                 ),
+                GestureDetector(
+                  onTap: () => {Navigator.of(context).pushNamedAndRemoveUntil("/login", (route) => false)},
+                  child: Text(
+                    'Skip intro',
+                    style: TextStyle(
+                      fontSize: 20,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+                VSpace(30),
+                StyledLogo(),
               ],
             ),
           ),
         ),
       ),
     );
-  }
-}
-
-class SlideShowSvgs extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Slideshow(
-        //topDots: true,
-        colorPrimary: Color(0xff9957F7),
-        sizePrimary: 25,
-        sizeSecondary: 15,
-        slides: <Widget>[
-          WebsafeSvg.asset("assets/images/img-intro-1.svg"),
-          WebsafeSvg.asset("assets/images/img-intro-2.svg"),
-          WebsafeSvg.asset("assets/images/img-intro-3.svg"),
-        ]);
   }
 }

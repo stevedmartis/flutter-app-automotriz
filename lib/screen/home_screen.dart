@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onpress: () => {Navigator.of(context).pushNamed('/position')},
                     ),
                     OptionSelector(
-                      title: "Scanner",
+                      title: "Niveles",
                       svgIcon: "scanner.svg",
                       onpress: () => {Navigator.of(context).pushNamed('/scanner')},
                     ),

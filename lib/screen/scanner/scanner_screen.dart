@@ -18,7 +18,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
         child: StyledScaffold(
           image: "assets/images/img-scanner.svg",
           title: "SLXH-07",
-          subTitle: "Scanner",
+          subTitle: "Niveles",
           backbutton: true,
           child: Container(
             width: _size.width,

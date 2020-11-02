@@ -65,12 +65,8 @@ class _TrinoAppState extends State<TrinoApp> {
     if (!mounted) return;
 
     if (Platform.isIOS) {
-      print('estoy en ios');
-      _fcm.requestNotificationPermissions(
-          const IosNotificationSettings(
-              sound: true, badge: true, alert: true, provisional: true));
-      _fcm.onIosSettingsRegistered
-          .listen((IosNotificationSettings settings) {
+      _fcm.requestNotificationPermissions(const IosNotificationSettings(sound: true, badge: true, alert: true, provisional: true));
+      _fcm.onIosSettingsRegistered.listen((IosNotificationSettings settings) {
         print("Settings registered: $settings");
       });
     }
@@ -88,8 +84,6 @@ class _TrinoAppState extends State<TrinoApp> {
       },
     );
   }
-
-
 }
 
 Future<dynamic> _onBackgroundMessage(Map<String, dynamic> message) async {
