@@ -18,7 +18,6 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,32 +38,43 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
             children: widget.pages,
           ),
         ),
-        
-        (widget.pages.length != this._currentPage+1)?
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          
-          children: 
-          
-          _buildPageIndicator(),
-        ):
-        Container(),
-
+        (widget.pages.length != this._currentPage + 1)
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: _buildPageIndicator(),
+              )
+            : StyledButton(
+                label: "Enter",
+                borderColor: Colors.transparent,
+                press: () => {
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/login', (route) => false)
+                },
+              ),
         VSpace(10),
-        (widget.pages.length != this._currentPage+1)?
-        GestureDetector(
-          onTap: () => {Navigator.of(context).pushNamedAndRemoveUntil(ScreensEnum.LOGIN.routeName, (route) => false)},
-          child: Text(
-         
-            'Skip intro',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ):
-        Container(),
+        (widget.pages.length != this._currentPage + 1)
+            ? GestureDetector(
+                onTap: () => {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      ScreensEnum.LOGIN.routeName, (route) => false)
+                },
+                child: Text(
+                  'Skip intro',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              )
+            : StyledButton(
+                label: "Create Account",
+                backgroundColor: Colors.transparent,
+                borderColor: Color(0xff3374F8),
+                fontColor: Color(0xff3374F8),
+                borderWidth: 2,
+                press: () => {Navigator.pop(context)},
+              ),
         VSpace(10),
         StyledLogo(),
       ],
@@ -75,7 +85,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
     List<Widget> list = [];
     int numberOfPages = widget.pages.length;
     for (int i = 0; i < numberOfPages; i++) {
-      list.add(  _indicator(numberOfPages, i));
+      list.add(_indicator(numberOfPages, i));
     }
     return list;
   }
@@ -84,9 +94,6 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
     double _size;
     Color _color;
 
-  
-
-
     if (_currentPage >= index - 0.5 && _currentPage < index + 0.5) {
       _size = 20;
       _color = Color(0xff3d3656);
@@ -94,10 +101,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
       _size = 15;
       _color = Colors.transparent;
     }
-    return 
-    
-    
-    AnimatedContainer(
+    return AnimatedContainer(
       duration: Duration(milliseconds: 200),
       height: _size,
       width: _size,
@@ -123,6 +127,5 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
         ),
       ),
     );
- 
   }
 }

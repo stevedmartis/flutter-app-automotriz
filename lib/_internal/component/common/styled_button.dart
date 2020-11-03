@@ -49,7 +49,7 @@ class _StyledButtonState extends State<StyledButton> {
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.white, width: widget.borderWidth),
+          border: Border.all(color: widget.borderColor, width: widget.borderWidth),
         ),
         child: Text(
           widget.label,
