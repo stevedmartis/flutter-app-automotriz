@@ -23,12 +23,12 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
               ),
               OnboardingMessages(
                 title: "HELLO!",
-                message: "Now everything you need\nto know about your car",
+                message: "Get assistance when ever you need, where ever you need",
                 image: "assets/images/img-intro-2.svg",
               ),
               OnboardingMessages(
                 title: "HELLO!",
-                message: "Know everything you need to know about your car",
+                message: "Take control of your car, make it a SmartCar",
                 image: "assets/images/img-intro-3.svg",
               ),
    ];
@@ -41,7 +41,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
       children: [
         Container(
           padding: EdgeInsets.all(10.0),
-          height: 600,
+          height: 620,
           alignment: Alignment.topCenter,
           child: PageView(
             physics: ClampingScrollPhysics(),
