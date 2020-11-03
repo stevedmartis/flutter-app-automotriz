@@ -39,12 +39,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 OnboardingMessages(
                   title: "HELLO!",
-                  message: "Now everything you need\nto know about your car",
+                  message: "Get assistance when ever you need, where ever you need",
                   image: "assets/images/img-intro-2.svg",
                 ),
                 OnboardingMessages(
                   title: "HELLO!",
-                  message: "Know everything you need to know about your car",
+                  message: "Take control of your car, make it a SmartCar",
                   image: "assets/images/img-intro-3.svg",
                 ),
               ],

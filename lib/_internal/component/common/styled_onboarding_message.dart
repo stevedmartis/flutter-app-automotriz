@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trinoapp/_internal/component/common/spacing.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class OnboardingMessages extends StatelessWidget {
@@ -26,17 +27,17 @@ class OnboardingMessages extends StatelessWidget {
           padding: EdgeInsets.only(top:50),
             child: Text(
             title,
-            
+           
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.w600,
               color: Colors.white,
             ),
           ),
+          
         ),
-        
         Container(
-          padding: EdgeInsets.only(left:50, right: 50),
+          padding: EdgeInsets.only(left:40, right: 50),
 
             child: Text(
             message,

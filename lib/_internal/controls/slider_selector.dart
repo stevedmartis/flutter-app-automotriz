@@ -26,8 +26,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.all(10.0),
-          height: 620,
+          height: 600,
           alignment: Alignment.topCenter,
           child: PageView(
             physics: ClampingScrollPhysics(),
@@ -40,21 +39,32 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
             children: widget.pages,
           ),
         ),
+        
+        (widget.pages.length != this._currentPage+1)?
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: _buildPageIndicator(),
-        ),
+          
+          children: 
+          
+          _buildPageIndicator(),
+        ):
+        Container(),
+
         VSpace(10),
+        (widget.pages.length != this._currentPage+1)?
         GestureDetector(
           onTap: () => {Navigator.of(context).pushNamedAndRemoveUntil(ScreensEnum.LOGIN.routeName, (route) => false)},
           child: Text(
+         
             'Skip intro',
             style: TextStyle(
               fontSize: 20,
+              color: Colors.grey,
               decoration: TextDecoration.underline,
             ),
           ),
-        ),
+        ):
+        Container(),
         VSpace(10),
         StyledLogo(),
       ],
@@ -65,14 +75,17 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
     List<Widget> list = [];
     int numberOfPages = widget.pages.length;
     for (int i = 0; i < numberOfPages; i++) {
-      list.add(i == _currentPage ? _indicator(true, i) : _indicator(false, i));
+      list.add(  _indicator(numberOfPages, i));
     }
     return list;
   }
 
-  Widget _indicator(bool isActive, int index) {
+  Widget _indicator(int numberOfPages, int index) {
     double _size;
     Color _color;
+
+  
+
 
     if (_currentPage >= index - 0.5 && _currentPage < index + 0.5) {
       _size = 20;
@@ -81,7 +94,10 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
       _size = 15;
       _color = Colors.transparent;
     }
-    return AnimatedContainer(
+    return 
+    
+    
+    AnimatedContainer(
       duration: Duration(milliseconds: 200),
       height: _size,
       width: _size,
@@ -107,5 +123,6 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
         ),
       ),
     );
+ 
   }
 }
