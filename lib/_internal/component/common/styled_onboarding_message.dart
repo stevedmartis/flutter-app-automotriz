@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/_internal/component/common/spacing.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class OnboardingMessages extends StatelessWidget {
@@ -19,26 +18,36 @@ class OnboardingMessages extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
 
     return Column(
+      
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
+        Container(
+          padding: EdgeInsets.only(top:50),
+            child: Text(
+            title,
+            
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
           ),
         ),
-        Text(
-          message,
-          textAlign: TextAlign.justify,
-          style: TextStyle(
-            fontFamily: 'GTWalsheimPro',
-            color: Color(0xffffffff),
-            fontSize: 20,
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
+        
+        Container(
+          padding: EdgeInsets.only(left:50, right: 50),
+
+            child: Text(
+            message,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'GTWalsheimPro',
+              color: Color(0xffffffff),
+              fontSize: 24,
+              fontWeight: FontWeight.w400,
+              fontStyle: FontStyle.normal,
+            ),
           ),
         ),
         Center(
