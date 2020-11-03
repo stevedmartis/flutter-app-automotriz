@@ -4,6 +4,7 @@ import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/car_selector.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
+import 'package:trinoapp/screen/screens.dart';
 
 //TODO https://pub.dev/packages/circular_menu
 class HomeScreen extends StatefulWidget {
@@ -57,17 +58,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     OptionSelector(
                       svgIcon: "location.svg",
                       title: "Ubicaciones",
-                      onpress: () => {Navigator.of(context).pushNamed('/position')},
+                      onpress: () => {Navigator.of(context).pushNamed(ScreensEnum.POSITION.routeName)},
                     ),
                     OptionSelector(
                       title: "Niveles",
                       svgIcon: "scanner.svg",
-                      onpress: () => {Navigator.of(context).pushNamed('/scanner')},
+                      onpress: () => {Navigator.of(context).pushNamed(ScreensEnum.SCANNER.routeName)},
                     ),
                     OptionSelector(
                       title: "Acciones",
                       svgIcon: "actions.svg",
-                      onpress: () => {Navigator.of(context).pushNamed('/action')},
+                      onpress: () => {Navigator.of(context).pushNamed(ScreensEnum.ACTION.routeName)},
                     ),
                   ],
                 ),
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: _size.width * 0.75,
                   backgroundColor: Color(0xffff0707),
                   press: () => {
-                    Navigator.of(context).pushNamed('/emergency'),
+                    Navigator.of(context).pushNamed(ScreensEnum.EMERGENCY.routeName),
                   },
                 ),
               ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
+import 'package:trinoapp/screen/screens.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
@@ -32,28 +33,28 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       svgIcon: "notification-msg.svg",
                       title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/detailAlert')
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_DETAILALERT.routeName)
                       },
                     ),
                     OptionSelector(
                       svgIcon: "notification-msg.svg",
                       title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/detailAlert')
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_DETAILALERT.routeName)
                       },
                     ),
                     OptionSelector(
                       svgIcon: "notification-msg-alert.svg",
                       title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/detailAlert')
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_DETAILALERT.routeName)
                       },
                     ),
                     OptionSelector(
                       svgIcon: "notification-msg-alert.svg",
                       title: "Titulo Mensaje",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/detailAlert')
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_DETAILALERT.routeName)
                       },
                     ),
                   ],

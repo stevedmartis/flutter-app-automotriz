@@ -8,8 +8,6 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -32,11 +30,28 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 end: Alignment(0.00, 1.00),
               ),
             ),
-            child: OnBoardingSelector(),
+            child: OnBoardingSelector(
+              pages: [
+                OnboardingMessages(
+                  title: "HELLO!",
+                  message: "Know everything you need to know about your car",
+                  image: "assets/images/img-intro-1.svg",
+                ),
+                OnboardingMessages(
+                  title: "HELLO!",
+                  message: "Now everything you need\nto know about your car",
+                  image: "assets/images/img-intro-2.svg",
+                ),
+                OnboardingMessages(
+                  title: "HELLO!",
+                  message: "Know everything you need to know about your car",
+                  image: "assets/images/img-intro-3.svg",
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
-
 }

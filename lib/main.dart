@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trinoapp/screen/action/action_screen.dart';
-import 'package:trinoapp/screen/emergency/emergency_screen.dart';
 import 'package:trinoapp/screen/home_screen.dart';
-import 'package:trinoapp/screen/login/login_screen.dart';
-import 'package:trinoapp/screen/scanner/alertdetail_screen.dart';
-import 'package:trinoapp/screen/scanner/levels_screen.dart';
-import 'package:trinoapp/screen/scanner/maintancehistory_screen.dart';
-import 'package:trinoapp/screen/scanner/maintenanceschedule_screen.dart';
-import 'package:trinoapp/screen/scanner/notification_screeen.dart';
-import 'package:trinoapp/screen/scanner/scanner_screen.dart';
-import 'package:trinoapp/screen/selection/location-screen.dart';
+import 'package:trinoapp/screen/screens.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:io';
 
@@ -42,22 +33,9 @@ class _TrinoAppState extends State<TrinoApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/welcome',
+      initialRoute: ScreensEnum.WELCOME.routeName,
       home: HomeScreen(title: 'TrinoLink'),
-      routes: {
-        '/welcome': (context) => WelcomeScreen(),
-        '/login': (context) => LoginScreen(),
-        '/position': (context) => LocationScreen(),
-        '/scanner': (context) => ScannerScreen(),
-        '/action': (context) => ActionScreen(),
-        '/emergency': (context) => EmergencyScreen(),
-        '/scanner/levels': (context) => LevelScreen(),
-        '/scanner/notification': (context) => NotificationScreen(),
-        '/scanner/maintenanceHistory': (context) => HistoryMaintanenceScreen(),
-        '/scanner/maintenanceSchedule': (context) => MaintenanceScheduleScreen(),
-        '/scanner/detailAlert': (context) => AlertDetailScreen(),
-        '/home': (context) => HomeScreen(title: 'TrinoLink'),
-      },
+      routes: Screens.buildRoutes(context),
     );
   }
 

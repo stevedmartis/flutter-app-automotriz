@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/menu_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
+import 'package:trinoapp/screen/screens.dart';
 
 class ScannerScreen extends StatefulWidget {
   @override
@@ -43,28 +44,28 @@ class _ScannerScreenState extends State<ScannerScreen> {
                       svgIcon: "levels.svg",
                       title: "Niveles",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/levels'),
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_LEVELS.routeName),
                       },
                     ),
                     OptionSelector(
                       svgIcon: "notifications.svg",
                       title: "Alertas",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/notification'),
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_NOTIFICATION.routeName),
                       },
                     ),
                     OptionSelector(
                       svgIcon: "maintainance-history.svg",
                       title: "Historial Mantencion",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/maintenanceHistory'),
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_MAINTENANCEHISTORY.routeName),
                       },
                     ),
                     OptionSelector(
                       svgIcon: "contact-shop.svg",
                       title: "Agendar Mantencion",
                       onpress: () => {
-                        Navigator.of(context).pushNamed('/scanner/maintenanceSchedule'),
+                        Navigator.of(context).pushNamed(ScreensEnum.SCANNER_MAINTENANCESCHEDULE.routeName),
                       },
                     ),
 
