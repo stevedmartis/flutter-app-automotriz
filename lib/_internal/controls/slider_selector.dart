@@ -18,14 +18,23 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    bool _isLastPage = widget.pages.length == this._currentPage +1;
+
     return Column(
+      
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+
         Container(
-          height: 600,
+          width: 350,
+          height: 550,
           alignment: Alignment.topCenter,
           child: PageView(
             physics: ClampingScrollPhysics(),
@@ -33,26 +42,30 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
             onPageChanged: (int page) {
               setState(() {
                 this._currentPage = page;
+
               });
+
             },
             children: widget.pages,
           ),
         ),
-        (widget.pages.length != this._currentPage + 1)
+
+        (!_isLastPage)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _buildPageIndicator(),
               )
             : StyledButton(
-                label: "Enter",
-                borderColor: Colors.transparent,
-                press: () => {
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil('/login', (route) => false)
-                },
-              ),
+                         
+              label: "Ingresar",
+              borderColor: Colors.transparent,
+              press: () => {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/login', (route) => false)
+              },
+                  ),
         VSpace(10),
-        (widget.pages.length != this._currentPage + 1)
+        (!_isLastPage)
             ? GestureDetector(
                 onTap: () => {
                   Navigator.of(context).pushNamedAndRemoveUntil(
@@ -61,21 +74,24 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                 child: Text(
                   'Skip intro',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     color: Colors.grey,
-                    decoration: TextDecoration.underline,
+                    //decoration: TextDecoration.underline,
                   ),
                 ),
               )
-            : StyledButton(
+           : StyledButton(
                 label: "Create Account",
                 backgroundColor: Colors.transparent,
                 borderColor: Color(0xff3374F8),
                 fontColor: Color(0xff3374F8),
                 borderWidth: 2,
-                press: () => {Navigator.pop(context)},
-              ),
-        VSpace(10),
+                press: () => {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      ScreensEnum.REGISTER.routeName, (route) => false)
+                      },
+              ), 
+        VSpace(20),
         StyledLogo(),
       ],
     );

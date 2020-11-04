@@ -45,8 +45,10 @@ class _StyledButtonState extends State<StyledButton> {
       child: Container(
         width: widget.width,
         height: 50,
+      
         alignment: Alignment.center,
         decoration: BoxDecoration(
+          
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: widget.borderColor, width: widget.borderWidth),

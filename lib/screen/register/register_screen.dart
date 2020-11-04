@@ -4,12 +4,12 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -21,7 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Container(
             width: double.infinity,
             height: _size.height * 0.9,
-            padding: EdgeInsets.all(5),
             decoration: new BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -37,22 +36,43 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                
-                Container(
-                  width: 340,
-                  height: 300,
-                  child: WebsafeSvg.asset("assets/images/img-login.svg"),
+           Center(
+          
+          child: Stack(
+            children: [
+              Positioned(
+             
+                child: Container(
+                  width:_size.width - 90 ,
+                  height: _size.width - 90,
+                  child: WebsafeSvg.asset("assets/images/intro-background.svg"),
                 ),
+              ),
+              Positioned(
+                top: 50,
+                left: 60,
+                child: Container(
+                  
+                  width: _size.width - 200,
+                  height: _size.width - 200,
+                  child:  WebsafeSvg.asset("assets/images/img-lets-get-started.svg"),
+                ),
+              ),
+            ],
+          ),
+        ),
                 Text(
-                  "Welcome Back!",
-                  style: TextStyle(
-                    fontFamily: 'GTWalsheimPro',
-                    color: Color(0xffffffff),
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
+                    "Crea una nueva cuenta!",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'GTWalsheimPro',
+                      color: Color(0xffffffff),
+                      
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.normal,
+                    ),
                   ),
-                ),
                 StyledTextBox(
                   hintText: 'User',
                   prefixIcon: Container(
@@ -81,12 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 StyledButton(
-                  label: "Enter",
+                  label: "Entrar",
                   borderColor: Colors.transparent,
                   press: () => {Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false)},
                 ),
                 Text(
-                  "Or enter with",
+                  "O entra con: ",
                   style: TextStyle(
                     fontFamily: 'GTWalsheimPro',
                     color: Color(0xff418cfa),
@@ -140,10 +160,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 GestureDetector(
-                  onTap: 
-                  () => {Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false)},
-                  child: Text(
-                    "Crear mi cuenta",
+                  onTap: () => {Navigator.of(context).pushNamedAndRemoveUntil('/login', (route) => false)},
+                                  child: Text(
+                    "Ir a iniciar sesión",
                     style: TextStyle(
                       fontFamily: 'GTWalsheimPro',
                       color: Color(0xff418cfa),
@@ -162,3 +181,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trinoapp/screen/register/register_screen.dart';
 
 import 'action/action_screen.dart';
 import 'emergency/emergency_screen.dart';
@@ -16,6 +17,7 @@ import 'welcome/welcome_screen.dart';
 enum ScreensEnum {
   HOME,
   LOGIN,
+  REGISTER,
   POSITION,
   SCANNER,
   ACTION,
@@ -48,6 +50,7 @@ class Screens {
     maps = {
       ScreensEnum.WELCOME.routeName: (ctx) => WelcomeScreen(),
       ScreensEnum.LOGIN.routeName: (ctx) => LoginScreen(),
+      ScreensEnum.REGISTER.routeName: (ctx) => RegisterScreen(),
       ScreensEnum.POSITION.routeName: (ctx) => LocationScreen(),
       ScreensEnum.SCANNER.routeName: (ctx) => ScannerScreen(),
       ScreensEnum.ACTION.routeName: (ctx) => ActionScreen(),

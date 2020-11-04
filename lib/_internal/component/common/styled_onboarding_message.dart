@@ -21,15 +21,14 @@ class OnboardingMessages extends StatelessWidget {
     return Column(
       
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top:50),
+          padding: EdgeInsets.only(top:40,),
             child: Text(
             title,
            
             style: TextStyle(
-              fontSize: 40,
+              fontSize: 30,
               fontWeight: FontWeight.w600,
               color: Colors.white,
             ),
@@ -37,7 +36,7 @@ class OnboardingMessages extends StatelessWidget {
           
         ),
         Container(
-          padding: EdgeInsets.only(left:40, right: 50),
+          padding: EdgeInsets.only(left:40, right: 40, top: 15),
 
             child: Text(
             message,
@@ -45,16 +44,18 @@ class OnboardingMessages extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'GTWalsheimPro',
               color: Color(0xffffffff),
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: FontWeight.w400,
               fontStyle: FontStyle.normal,
             ),
           ),
         ),
         Center(
+          
           child: Stack(
             children: [
               Positioned(
+             
                 child: Container(
                   width: _size.width,
                   height: _size.width * 1.0,
@@ -63,8 +64,9 @@ class OnboardingMessages extends StatelessWidget {
               ),
               Positioned(
                 top: 80,
-                left: 70,
+                left: 50,
                 child: Container(
+                  
                   width: _size.width * 0.60,
                   height: _size.height * 0.30,
                   child: WebsafeSvg.asset(image),
