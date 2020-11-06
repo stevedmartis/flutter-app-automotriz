@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            height: _size.height * 0.9,
+            height: _size.height * 0.95,
             decoration: new BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -31,6 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             child: OnBoardingSelector(
+              
               pages: [
                 OnboardingMessages(
                   title: "HELLO!",

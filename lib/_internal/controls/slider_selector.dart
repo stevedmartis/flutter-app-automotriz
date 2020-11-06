@@ -34,8 +34,8 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
 
         Container(
           width: 350,
-          height: 550,
-          alignment: Alignment.topCenter,
+          height: 520,
+          alignment: Alignment.center,
           child: PageView(
             physics: ClampingScrollPhysics(),
             controller: _pageController,
@@ -90,8 +90,8 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                   Navigator.of(context).pushNamedAndRemoveUntil(
                       ScreensEnum.REGISTER.routeName, (route) => false)
                       },
-              ), 
-        VSpace(20),
+              ),
+              VSpace(30) ,
         StyledLogo(),
       ],
     );
