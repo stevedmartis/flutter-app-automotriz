@@ -22,10 +22,11 @@ class StyledLogo extends StatelessWidget {
             text: "Link",
             style: TextStyle(
               fontFamily: 'GTWalsheimPro',
+                            fontStyle: FontStyle.normal,
+
               color: Color(0xff418cfa),
               fontSize: 27,
               fontWeight: FontWeight.w700,
-              fontStyle: FontStyle.normal,
             ),
           ),
         ],

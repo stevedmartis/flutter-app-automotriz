@@ -53,19 +53,20 @@ class OptionSelector extends StatelessWidget {
               ),
             ),
             Container(
-              width: _size.width * 0.40,
+              width: _size.width,
               alignment: Alignment.centerLeft,
               child: Text(title, style: kMenuStyle),
             ),
-            StyledCircularButton(
+          StyledCircularButton(
               height: 34,
               width: 34,
               icon: Icon(
-                Icons.arrow_forward_ios,
+                Icons.ac_unit,
                 size: 14,
                 color: Color(0xff418cfa),
               ),
             )
+
           ],
         ),
       ),

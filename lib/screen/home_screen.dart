@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 VSpace(15),
                 MenuSelector(
-                  width: _size.width * 0.75,
+                  width: _size.width * 0.90,
                   options: [
                     OptionSelector(
                       svgIcon: "location.svg",
@@ -70,17 +70,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       svgIcon: "actions.svg",
                       onpress: () => {Navigator.of(context).pushNamed(ScreensEnum.ACTION.routeName)},
                     ),
+                                        OptionSelector(
+                      title: "Agendar",
+                      svgIcon: "actions.svg",
+                      onpress: () => {Navigator.of(context).pushNamed(ScreensEnum.AGENDAR.routeName)},
+                    ),
                   ],
                 ),
                 VSpace(15),
-                StyledButton(
-                  label: 'Llamada Emergencia',
-                  width: _size.width * 0.75,
-                  backgroundColor: Color(0xffff0707),
-                  press: () => {
-                    Navigator.of(context).pushNamed(ScreensEnum.EMERGENCY.routeName),
-                  },
-                ),
+
               ],
             ),
           ),

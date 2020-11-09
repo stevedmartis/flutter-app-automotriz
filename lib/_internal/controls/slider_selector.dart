@@ -18,9 +18,6 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
-
-
-
   @override
   Widget build(BuildContext context) {
 
@@ -28,13 +25,13 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
 
     return Column(
       
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
 
         Container(
           width: 350,
-          height: 520,
+          height: 530,
           alignment: Alignment.center,
           child: PageView(
             physics: ClampingScrollPhysics(),
@@ -49,6 +46,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
             children: widget.pages,
           ),
         ),
+      
 
         (!_isLastPage)
             ? Row(
@@ -64,9 +62,11 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                     .pushNamedAndRemoveUntil('/login', (route) => false)
               },
                   ),
-        VSpace(10),
+               VSpace(_isLastPage? 15: 30),     
         (!_isLastPage)
-            ? GestureDetector(
+        
+            ? 
+            GestureDetector(
                 onTap: () => {
                   Navigator.of(context).pushNamedAndRemoveUntil(
                       ScreensEnum.LOGIN.routeName, (route) => false)
@@ -80,7 +80,9 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                   ),
                 ),
               )
-           : StyledButton(
+              
+           : 
+            StyledButton(
                 label: "Create Account",
                 backgroundColor: Colors.transparent,
                 borderColor: Color(0xff3374F8),
@@ -91,8 +93,9 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                       ScreensEnum.REGISTER.routeName, (route) => false)
                       },
               ),
-              VSpace(30) ,
+          VSpace(_isLastPage ? 20 : 65),
         StyledLogo(),
+         
       ],
     );
   }

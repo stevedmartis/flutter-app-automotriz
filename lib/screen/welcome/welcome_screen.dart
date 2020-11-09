@@ -49,6 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   image: "assets/images/img-intro-3.svg",
                 ),
               ],
+              
             ),
           ),
         ),

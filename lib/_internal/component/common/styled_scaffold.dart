@@ -57,8 +57,8 @@ class StyledScaffold extends StatelessWidget {
                     Text(subTitle.toUpperCase(),
                         style: TextStyle(
                           fontFamily: 'GTWalsheimPro',
-                          color: Color(0xff418cfa),
-                          fontSize: 22,
+                          color: Color(0xff3374F8),
+                          fontSize: 25,
                           fontWeight: FontWeight.w700,
                           fontStyle: FontStyle.normal,
                         )),

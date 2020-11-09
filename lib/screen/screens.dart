@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/screen/register/register_screen.dart';
 
 import 'action/action_screen.dart';
+import 'agenda/agendar_screen.dart';
 import 'emergency/emergency_screen.dart';
 import 'home_screen.dart';
 import 'login/login_screen.dart';
@@ -23,6 +24,7 @@ enum ScreensEnum {
   ACTION,
   EMERGENCY,
   WELCOME,
+  AGENDAR,
   SCANNER_LEVELS,
   SCANNER_NOTIFICATION,
   SCANNER_MAINTENANCEHISTORY,
@@ -54,6 +56,9 @@ class Screens {
       ScreensEnum.POSITION.routeName: (ctx) => LocationScreen(),
       ScreensEnum.SCANNER.routeName: (ctx) => ScannerScreen(),
       ScreensEnum.ACTION.routeName: (ctx) => ActionScreen(),
+      ScreensEnum.AGENDAR.routeName: (ctx) => AgendarScreen(),
+
+      
       ScreensEnum.EMERGENCY.routeName: (ctx) => EmergencyScreen(),
       ScreensEnum.SCANNER_LEVELS.routeName: (ctx) => LevelScreen(),
       ScreensEnum.SCANNER_NOTIFICATION.routeName: (ctx) => NotificationScreen(),
