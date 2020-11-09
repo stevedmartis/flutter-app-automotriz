@@ -3,6 +3,7 @@ import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/agenda_selector.dart';
 import 'package:trinoapp/_internal/controls/option_agenda_selector.dart';
 import 'package:trinoapp/_internal/controls/option_selector.dart';
+import 'package:trinoapp/screen/screens.dart';
 
 //TODO https://pub.dev/packages/circular_menu
 class AgendarScreen extends StatefulWidget {
@@ -66,7 +67,7 @@ class _AgendarScreenState extends State<AgendarScreen> {
                         print("Actualizar valores"),
                       },
                     ),
-                                        OptionAgendaSelector(
+                       OptionAgendaSelector(
                       svgIcon: "location.svg",
                       title: "Ver Ubicacion actual",
                       onpress: () => {
@@ -74,6 +75,12 @@ class _AgendarScreenState extends State<AgendarScreen> {
                       },
                     ),
                   ],
+                ),
+                VSpace(20),
+                StyledButton(
+                  label: "Agendar",
+                  borderColor: Colors.transparent,
+                  press: () => {Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false)},
                 ),
               ],
             ),

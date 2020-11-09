@@ -53,7 +53,6 @@ class OptionSelector extends StatelessWidget {
               ),
             ),
             Container(
-              width: _size.width,
               alignment: Alignment.centerLeft,
               child: Text(title, style: kMenuStyle),
             ),
@@ -61,8 +60,8 @@ class OptionSelector extends StatelessWidget {
               height: 34,
               width: 34,
               icon: Icon(
-                Icons.ac_unit,
-                size: 14,
+                Icons.chevron_right_rounded,
+                size: 25,
                 color: Color(0xff418cfa),
               ),
             )
