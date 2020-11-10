@@ -31,7 +31,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
 
         Container(
           width: 350,
-          height: 530,
+          height: 570,
           alignment: Alignment.center,
           child: PageView(
             physics: ClampingScrollPhysics(),
@@ -62,7 +62,7 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                     .pushNamedAndRemoveUntil('/login', (route) => false)
               },
                   ),
-               VSpace(_isLastPage? 15: 30),     
+               VSpace(_isLastPage? 10: 10),     
         (!_isLastPage)
         
             ? 

@@ -23,7 +23,7 @@ class OnboardingMessages extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top:30,),
+          padding: EdgeInsets.only(top:80,),
             child: Text(
             title,
            

@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trinoapp/_internal/component/component.dart';
 import 'package:trinoapp/_internal/controls/agenda_selector.dart';
 import 'package:trinoapp/_internal/controls/option_agenda_selector.dart';
-import 'package:trinoapp/_internal/controls/option_selector.dart';
-import 'package:trinoapp/screen/screens.dart';
 
-//TODO https://pub.dev/packages/circular_menu
 class AgendarScreen extends StatefulWidget {
   AgendarScreen({Key key, this.title}) : super(key: key);
   final String title;
