@@ -55,28 +55,31 @@ class _AgendarScreenState extends State<AgendarScreen> {
                   options: [
                     OptionAgendaSelector(
                       svgIcon: "location.svg",
-                      title: "Ver Ubicacion actual",
+                      nameInput: "Sucursal",
+                      valueInput: 'Loren inpum',
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
-                                        OptionAgendaSelector(
+                      OptionAgendaSelector(
                       svgIcon: "location.svg",
-                      title: "Ver Ubicacion dsfsd",
+                      nameInput: "Fecha",
+                      valueInput: '23/09/2020',
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
                        OptionAgendaSelector(
                       svgIcon: "location.svg",
-                      title: "Ver Ubicacion actual",
+                      nameInput: "Hora",
+                      valueInput: "16:30",
                       onpress: () => {
                         print("Actualizar valores"),
                       },
                     ),
                   ],
                 ),
-                VSpace(20),
+                VSpace(30),
                 StyledButton(
                   label: "Agendar",
                   borderColor: Colors.transparent,

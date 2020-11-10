@@ -3,14 +3,16 @@ import 'package:websafe_svg/websafe_svg.dart';
 
 class OptionAgendaSelector extends StatelessWidget {
   final String svgIcon;
-  final String title;
+  final String nameInput;
+final String valueInput;
   final Function onpress;
   final Color statusColor;
 
   const OptionAgendaSelector({
     Key key,
     this.svgIcon,
-    this.title,
+    this.nameInput,
+    this.valueInput,
     this.onpress,
     this.statusColor = Colors.transparent,
   }) : super(key: key);
@@ -52,7 +54,7 @@ class OptionAgendaSelector extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Sucursal agendada',
+                        this.nameInput,
                         style: TextStyle(
                           color: Color(0xff427EF8),
                           fontSize: 12,
@@ -62,7 +64,7 @@ class OptionAgendaSelector extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Lorem ipsum',
+                        this.valueInput,
                         style: TextStyle(
                           color: Color(0xff3776F8),
                           fontSize: 16,

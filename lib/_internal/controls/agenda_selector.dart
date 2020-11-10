@@ -34,7 +34,7 @@ class AgendaSelector extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       width: width,
-      height: 300,
+      height: 260,
       padding: EdgeInsets.all(5.0),
       decoration: new BoxDecoration(
         color: Color(0xffffffff),
