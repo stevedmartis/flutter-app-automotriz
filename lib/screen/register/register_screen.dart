@@ -19,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-                    height: _size.height * 0.99,
+          height: _size.height * 0.99,
           padding: EdgeInsets.only(top: 50),
           decoration: new BoxDecoration(
             gradient: LinearGradient(
@@ -62,7 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
               Text(
-                  "Crea una nueva cuenta!",
+                  "Crea tu nueva cuenta!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'GTWalsheimPro',

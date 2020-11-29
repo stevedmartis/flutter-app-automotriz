@@ -20,15 +20,12 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
 
   @override
   Widget build(BuildContext context) {
-
-    bool _isLastPage = widget.pages.length == this._currentPage +1;
+    bool _isLastPage = widget.pages.length == this._currentPage + 1;
 
     return Column(
-      
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-
         Container(
           width: 350,
           height: 570,
@@ -39,34 +36,38 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
             onPageChanged: (int page) {
               setState(() {
                 this._currentPage = page;
-
               });
-
             },
             children: widget.pages,
           ),
         ),
-      
-
         (!_isLastPage)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _buildPageIndicator(),
               )
             : StyledButton(
-                         
-              label: "Ingresar",
-              borderColor: Colors.transparent,
-              press: () => {
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/login', (route) => false)
-              },
-                  ),
-               VSpace(_isLastPage? 10: 10),     
-        (!_isLastPage)
-        
-            ? 
-            GestureDetector(
+                label: "Ingresar",
+                borderColor: Colors.transparent,
+                press: () => {
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/login', (route) => false)
+                },
+              ),
+        VSpace(10),
+        (_isLastPage)
+            ? StyledButton(
+                label: "Create Account",
+                backgroundColor: Colors.transparent,
+                borderColor: Color(0xff3374F8),
+                fontColor: Color(0xff3374F8),
+                borderWidth: 2,
+                press: () => {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      ScreensEnum.REGISTER.routeName, (route) => false)
+                },
+              )
+            : GestureDetector(
                 onTap: () => {
                   Navigator.of(context).pushNamedAndRemoveUntil(
                       ScreensEnum.LOGIN.routeName, (route) => false)
@@ -79,23 +80,9 @@ class _OnBoardingSelectorState extends State<OnBoardingSelector> {
                     //decoration: TextDecoration.underline,
                   ),
                 ),
-              )
-              
-           : 
-            StyledButton(
-                label: "Create Account",
-                backgroundColor: Colors.transparent,
-                borderColor: Color(0xff3374F8),
-                fontColor: Color(0xff3374F8),
-                borderWidth: 2,
-                press: () => {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                      ScreensEnum.REGISTER.routeName, (route) => false)
-                      },
               ),
-          VSpace(_isLastPage ? 20 : 65),
+        VSpace(_isLastPage ? 20 : 80),
         StyledLogo(),
-         
       ],
     );
   }
